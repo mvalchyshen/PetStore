@@ -1,9 +1,18 @@
 package ua.goit.petstore.model;
 
+import com.google.gson.annotations.SerializedName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class Category implements BaseEntity<Integer> {
-    private Integer id;
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Category implements BaseEntity<Long> {
+    @SerializedName("id")
+    private Long id;
+    @SerializedName("name")
     private String name;
 }
