@@ -6,8 +6,8 @@ public final class EndPoints {
     public static final String PET_BY_ID = PET+"/{petId}";
     public static final String UPLOAD_IMAGE_BY_ID = PET_BY_ID +"/uploadImage";
     public static final String FIND_PET_BY_STATUS = PET+"/findByStatus";
-    public static final String STORE_INVENTORY = "/store/inventory";
-    public static final String STORE_ORDER = "/store/order";
+    public static final String STORE_INVENTORY = "store/inventory";
+    public static final String STORE_ORDER = "store/order";
     public static final String STORE_ORDER_WITH_ID = STORE_ORDER+"/{orderId}";
     public static final String USER_END_POINT = "user";
     public static final String CREATE_USERS_WITH_LIST = USER_END_POINT+"/createWithList";
