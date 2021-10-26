@@ -4,7 +4,6 @@ package ua.goit.petstore.retrofit;
 import ua.goit.petstore.model.Category;
 import ua.goit.petstore.model.Pet;
 import ua.goit.petstore.model.PetStatus;
-import ua.goit.petstore.model.User;
 
 import java.util.List;
 import java.util.Locale;
