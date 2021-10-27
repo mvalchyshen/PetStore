@@ -85,7 +85,7 @@ public interface RetrofitClient {
 
     @POST(CREATE_USERS_WITH_ARRAY)
     @Headers({HEADERS})
-    default Call<ApiResponse> createUsersWithList(@Body User[] users){
+    default Call<ApiResponse> createUsersWithArray(@Body User[] users){
         return createUsersWithList(Arrays.asList(users));
     }
 

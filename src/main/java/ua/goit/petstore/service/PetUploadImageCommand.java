@@ -16,7 +16,7 @@ public class PetUploadImageCommand extends AbstractCommand{
         Long id = Long.parseLong(view.read());
         view.write("write link to image:");
         String link = view.read();
-        client.uploadImage(id, link);
+        super.execute(client.uploadImage(id, link));
     }
 
     @Override
