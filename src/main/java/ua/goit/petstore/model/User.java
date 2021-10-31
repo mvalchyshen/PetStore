@@ -6,11 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements BaseEntity<Long> {
+public class User implements BaseEntity<Long>, Serializable {
 
     @SerializedName("id")
     private Long id;

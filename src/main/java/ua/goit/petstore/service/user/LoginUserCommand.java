@@ -1,12 +1,15 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.user;
 
+import ua.goit.petstore.model.User;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class LoginUserCommand extends AbstractCommand{
+public class LoginUserCommand extends AbstractCommand<User> {
     public LoginUserCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands, User.class);
     }
 
     @Override

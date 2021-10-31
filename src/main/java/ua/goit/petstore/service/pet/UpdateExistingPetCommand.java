@@ -1,28 +1,23 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.pet;
 
 import lombok.SneakyThrows;
 import ua.goit.petstore.model.Pet;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
-import java.lang.reflect.Field;
 import java.util.Map;
 
-public class UpdateExistingPetCommand extends AbstractCommand{
+public class UpdateExistingPetCommand extends AbstractCommand<Pet> {
     public UpdateExistingPetCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands,Pet.class);
     }
     @SneakyThrows
     @Override
     public void proceed() {
         view.write("type in pet's info to update:");
-        Field[] declaredFields = Pet.class.getDeclaredFields();
-        Pet pet = new Pet();
-        for (Field field : declaredFields) {
-            view.write(field.getName()+":");
-            field.setAccessible(true);
-            field.set(pet,view.read());
-        }
-        super.execute(client.createPet(pet));
+        Pet pet = super.createEntity();
+        super.execute(client.updatePet(pet));
     }
 
     @Override

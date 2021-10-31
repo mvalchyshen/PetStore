@@ -1,13 +1,16 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.pet;
 
+import ua.goit.petstore.model.Pet;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class FindPetByIdCommand extends AbstractCommand{
+public class FindPetByIdCommand extends AbstractCommand<Pet> {
 
     public FindPetByIdCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands, Pet.class);
     }
 
     @Override

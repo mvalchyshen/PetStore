@@ -1,13 +1,16 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.user;
 
 import com.google.common.graph.AbstractValueGraph;
+import ua.goit.petstore.model.User;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class LogoutUserCommand extends AbstractCommand {
+public class LogoutUserCommand extends AbstractCommand<User> {
     public LogoutUserCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands, User.class);
     }
 
     @Override

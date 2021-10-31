@@ -6,11 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category implements BaseEntity<Long> {
+public class Category implements BaseEntity<Long>, Serializable {
     @SerializedName("id")
     private Long id;
     @SerializedName("name")

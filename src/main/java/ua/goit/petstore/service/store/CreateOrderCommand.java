@@ -1,20 +1,21 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.store;
 
 import ua.goit.petstore.model.Order;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
 import java.lang.reflect.Field;
 import java.util.Map;
 
-public class CreateOrderCommand extends AbstractCommand{
+public class CreateOrderCommand extends AbstractCommand<Order> {
     public CreateOrderCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands,Order.class);
     }
 
     @Override
     public void proceed() {
-        Order order = super.createEntity(Order.class);
-        super.execute(client.createOrder(order));
+        super.execute(client.createOrder((Order) super.createEntity()));
     }
 
     @Override

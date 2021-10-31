@@ -1,24 +1,23 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.pet;
 
 import lombok.SneakyThrows;
 import ua.goit.petstore.model.Pet;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.stream.Collectors;
 
-public class AddPetCommand extends AbstractCommand {
+import java.util.Map;
+
+public class AddPetCommand extends AbstractCommand<Pet> {
     public AddPetCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands,Pet.class);
     }
 
     @SneakyThrows
     @Override
     public void proceed() {
-        Pet pet = super.createEntity(Pet.class);
-        super.execute(client.createPet(pet));
+        super.execute(client.createPet(super.createEntity()));
     }
 
     @Override

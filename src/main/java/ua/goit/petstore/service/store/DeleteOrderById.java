@@ -1,13 +1,16 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.store;
 
+import ua.goit.petstore.model.Order;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class DeleteOrderById extends AbstractCommand{
+public class DeleteOrderById extends AbstractCommand<Order> {
 
     public DeleteOrderById(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands,Order.class);
     }
 
     @Override

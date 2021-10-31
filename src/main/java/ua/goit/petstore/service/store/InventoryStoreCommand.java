@@ -1,13 +1,16 @@
-package ua.goit.petstore.service;
+package ua.goit.petstore.service.store;
 
+import ua.goit.petstore.model.Order;
+import ua.goit.petstore.service.AbstractCommand;
+import ua.goit.petstore.service.Command;
 import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class InventoryStoreCommand extends AbstractCommand{
+public class InventoryStoreCommand extends AbstractCommand<Order> {
 
     public InventoryStoreCommand(View view, Map<String, Command> commands) {
-        super(view, commands);
+        super(view, commands,Order.class);
     }
 
     @Override

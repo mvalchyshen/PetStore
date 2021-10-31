@@ -9,7 +9,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitConfig {
+public class Config {
     public static final Gson GSON = new Gson();
     public static <T> T createClient(String host, Class<T> clientClass) {
         return new Retrofit.Builder()
@@ -29,8 +29,8 @@ public class RetrofitConfig {
         }
         else {
             String string = response.errorBody().string();
-            System.out.println(string);
-            throw new RuntimeException(string);
+            int code = response.code();
+            throw new RuntimeException(string+"\n"+"code:"+code);
         }
     }
 }

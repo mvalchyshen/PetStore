@@ -1,11 +1,10 @@
 package ua.goit.petstore.retrofit;
 
-import lombok.Getter;
 import retrofit2.Call;
 import retrofit2.http.*;
 import ua.goit.petstore.model.*;
 
-import java.util.Arrays;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +18,9 @@ public interface RetrofitClient {
 
     @POST(UPLOAD_IMAGE_BY_ID)
     @Headers({HEADERS})
-    Call<ApiResponse> uploadImage(@Path("petId") Long id, String filePath);
+    Call<ApiResponse> uploadImage(@Path("petId") Long id,
+                                  @Field("additionalMetadata") String additionalMetadata,
+                                  @Field("file") File file);
 
     @POST(PET)
     @Headers({HEADERS})
@@ -85,9 +86,7 @@ public interface RetrofitClient {
 
     @POST(CREATE_USERS_WITH_ARRAY)
     @Headers({HEADERS})
-    default Call<ApiResponse> createUsersWithArray(@Body User[] users){
-        return createUsersWithList(Arrays.asList(users));
-    }
+    Call<ApiResponse> createUsersWithArray(@Body User[] users);
 
     @POST(USER_END_POINT)
     @Headers({HEADERS})
