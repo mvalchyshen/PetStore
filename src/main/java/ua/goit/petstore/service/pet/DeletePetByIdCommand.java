@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class DeletePetByIdCommand extends AbstractCommand<Pet> {
+public class DeletePetByIdCommand extends AbstractCommand<Pet,Long> {
     public DeletePetByIdCommand(View view, Map<String, Command> commands) {
         super(view, commands,Pet.class);
     }
@@ -16,7 +16,6 @@ public class DeletePetByIdCommand extends AbstractCommand<Pet> {
     public void proceed() {
         view.write("type in id:");
         Long id = Long.parseLong(view.read());
-
         try {
             super.execute(client.deletePetById(id));
         } catch (RuntimeException e) {

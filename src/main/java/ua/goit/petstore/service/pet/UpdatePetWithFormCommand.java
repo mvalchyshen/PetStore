@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class UpdatePetWithFormCommand extends AbstractCommand<Pet> {
+public class UpdatePetWithFormCommand extends AbstractCommand<Pet,Long> {
     public UpdatePetWithFormCommand(View view, Map<String, Command> commands) {
         super(view, commands,Pet.class);
     }

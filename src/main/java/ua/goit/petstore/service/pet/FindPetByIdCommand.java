@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class FindPetByIdCommand extends AbstractCommand<Pet> {
+public class FindPetByIdCommand extends AbstractCommand<Pet,Long> {
 
     public FindPetByIdCommand(View view, Map<String, Command> commands) {
         super(view, commands, Pet.class);

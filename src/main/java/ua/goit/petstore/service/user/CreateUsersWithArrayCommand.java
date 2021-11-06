@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CreateUsersWithArrayCommand extends AbstractCommand<User> {
+public class CreateUsersWithArrayCommand extends AbstractCommand<User,Long> {
 
     public CreateUsersWithArrayCommand(View view, Map<String, Command> commands) {
         super(view, commands,User.class);

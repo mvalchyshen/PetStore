@@ -8,14 +8,14 @@ import ua.goit.petstore.view.View;
 import java.lang.reflect.Field;
 import java.util.Map;
 
-public class CreateOrderCommand extends AbstractCommand<Order> {
+public class CreateOrderCommand extends AbstractCommand<Order,Long> {
     public CreateOrderCommand(View view, Map<String, Command> commands) {
         super(view, commands,Order.class);
     }
 
     @Override
     public void proceed() {
-        super.execute(client.createOrder((Order) super.createEntity()));
+        super.execute(client.createOrder(super.createEntity()));
     }
 
     @Override

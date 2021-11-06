@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class LoginUserCommand extends AbstractCommand<User> {
+public class LoginUserCommand extends AbstractCommand<User,Long> {
     public LoginUserCommand(View view, Map<String, Command> commands) {
         super(view, commands, User.class);
     }

@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class FindOrderByIdCommand extends AbstractCommand<Order> {
+public class FindOrderByIdCommand extends AbstractCommand<Order,Long> {
 
     public FindOrderByIdCommand(View view, Map<String, Command> commands) {
         super(view, commands,Order.class);

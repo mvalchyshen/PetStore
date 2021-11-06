@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class InventoryStoreCommand extends AbstractCommand<Order> {
+public class InventoryStoreCommand extends AbstractCommand<Order,Long> {
 
     public InventoryStoreCommand(View view, Map<String, Command> commands) {
         super(view, commands,Order.class);

@@ -8,7 +8,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class LogoutUserCommand extends AbstractCommand<User> {
+public class LogoutUserCommand extends AbstractCommand<User,Long> {
     public LogoutUserCommand(View view, Map<String, Command> commands) {
         super(view, commands, User.class);
     }

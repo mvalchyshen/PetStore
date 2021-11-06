@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class DeleteOrderById extends AbstractCommand<Order> {
+public class DeleteOrderById extends AbstractCommand<Order,Long> {
 
     public DeleteOrderById(View view, Map<String, Command> commands) {
         super(view, commands,Order.class);

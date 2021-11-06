@@ -1,5 +1,7 @@
 package ua.goit.petstore.retrofit;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.*;
 import ua.goit.petstore.model.*;
@@ -16,11 +18,12 @@ public interface RetrofitClient {
     @Headers({HEADERS})
     Call<User> getUserByName(@Path("username") String username);
 
+    @Multipart
     @POST(UPLOAD_IMAGE_BY_ID)
     @Headers({HEADERS})
     Call<ApiResponse> uploadImage(@Path("petId") Long id,
-                                  @Field("additionalMetadata") String additionalMetadata,
-                                  @Field("file") File file);
+                                  @Part("additionalMetadata") RequestBody additionalMetadata,
+                                  @Part MultipartBody.Part file);
 
     @POST(PET)
     @Headers({HEADERS})

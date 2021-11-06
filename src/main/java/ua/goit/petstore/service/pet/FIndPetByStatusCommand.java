@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class FIndPetByStatusCommand extends AbstractCommand<Pet> {
+public class FIndPetByStatusCommand extends AbstractCommand<Pet,Long> {
 
     public FIndPetByStatusCommand(View view, Map<String, Command> commands) {
         super(view, commands,Pet.class);

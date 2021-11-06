@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class DeleteUserByNameCommand extends AbstractCommand<User> {
+public class DeleteUserByNameCommand extends AbstractCommand<User,Long> {
 
     public DeleteUserByNameCommand(View view, Map<String, Command> commands) {
         super(view, commands,User.class);

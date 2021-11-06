@@ -9,7 +9,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class CreateUsersWithListCommand extends AbstractCommand<User> {
+public class CreateUsersWithListCommand extends AbstractCommand<User,Long> {
 
     private CreateUsersWithArrayCommand command = new CreateUsersWithArrayCommand(view,commands);
     public CreateUsersWithListCommand(View view, Map<String, Command> commands) {

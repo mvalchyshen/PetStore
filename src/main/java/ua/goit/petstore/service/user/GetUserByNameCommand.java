@@ -7,7 +7,7 @@ import ua.goit.petstore.view.View;
 
 import java.util.Map;
 
-public class GetUserByNameCommand extends AbstractCommand<User> {
+public class GetUserByNameCommand extends AbstractCommand<User,Long> {
 
     public GetUserByNameCommand(View view, Map<String, Command> commands) {
         super(view, commands, User.class);
